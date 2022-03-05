@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="Css/fontello.css">
+    <link rel="stylesheet" href="Css/formulario.css">
+</head>
+<body>
+    <header>
+        <div class="contenedor">
+            <h1 class="icon-guidedog"><span>A</span>F</h1>
+            <input type="checkbox" id="menu-bar">
+            <label class="icon-menu" for="menu-bar"></label>
+            <nav class="menu">
+                <a href="index.html">Inicio</a>
+                <!--<a href="">Proyectos</a>-->
+                <!--<a href="">Blog</a>-->
+                <!--<a href="">Contactame</a>-->
+            </nav>
+        </div>
+    </header>
+    <form class="form"   action="https://formspree.io/f/xzbodnkd"
+    method="POST">
+        <div class="form_container">
+            <h2 class="form_title">Contáctame</h2>
+            <input type="text" class="form_input" placeholder="Nombre:" name="name">
+            <input type="email" class="form_input" placeholder="Email:" name="_replyto">
+            <textarea class="form_input form_input--message" placeholder="Mensaje:" name="message"></textarea>
+            <input type="submit" value="Enviar" class="form_cta">
+
+        </div>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,114 @@
+#blog h3, h4 {
+    text-align: center;
+    color: #fff;
+}
+#blog .contenedor{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#blog article{
+    margin: 15px;
+}
+
+#blog img{
+    width: 100%;
+    max-width: 280px;
+
+}
+
+.download-cv {
+    padding: 15px 25px;
+    background-color: var(--secundary-color);
+    border: none;
+    border-radius: 25px;
+    margin-top: 15px;
+    cursor: pointer;
+    box-shadow: 1px 3px 11px -5px var(--secundary-color);
+}
+
+.download-cv:hover{
+    background-color: #fff;
+    box-shadow: none;
+    transition: ease-in 0.4s;
+}
+
+ 
+.portfolio {
+    color: #fff;
+    background-color: var(--primery-color);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.portfolio-heading{
+    width: 100vw;
+    padding: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.portfolio-heading h2 {
+    font-size: 2.5rem;
+    display: flex;
+}
+
+.container {
+    width: 80wv;
+    height: 80vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    max-width: 400px;
+    min-height: 150px;
+    color: #fff;
+    background-color: rgb(18, 46, 83);
+    margin: 1rem;
+}
+
+#blog .container img {
+    background-size: cover;
+}
+
+.card__title{
+    padding: 1rem;
+}
+
+.card__projects-links{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.card__projects-links a {
+    color: #fff;
+    text-decoration: none;
+}
+.card__projects-links i {
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+.card .project-details {
+margin: 0 auto;
+margin: 1rem;
+width: 70%;
+}
+
+.card .project-details a {
+    text-decoration: none;
+    color: var(--primery-color) ;
+    text-transform: uppercase;
+}
+
+.proyect-details-content{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
