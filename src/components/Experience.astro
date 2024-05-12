@@ -1,0 +1,58 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCIE = [
+    {
+    date: "Actualmente...",
+    title: "Asistente de Docencia",
+    company: "Soy Henry",
+    description:
+      "• Coordinar un grupo de estudiantes para lograr la integración al grupo de estudio.\n" +
+      "• Guiar a los estudiantes en los primeros pasos del curso\n" +
+      "• Ayudar a resolver ejercicios y promover la colaboración grupal (Programación en Parejas)\n" +
+      "• Proponer ideas para mejorar los procesos del Bootcamp",
+  },
+  {
+    date: "Actualmente...",
+    title: "Técnico informático",
+    company: "Grupo SEB",
+    description:
+      "me encargo del buen funcionamiento de la red y sus equipos. Realizo mantenimiento, instalación y configuración de sistemas de seguridad y otros dispositivos. Aseguro la eficiencia y cumplimiento de estándares de calidad y seguridad en todas las tecnologías de la empresa.",
+    // link: "https://twitch.tv/midudev",
+  },
+]
+---
+
+<ol id="experienceList" class="relative mt-16">
+  {
+    EXPERIENCIE.map((experiencie, index) => (
+      <li class={index >= 2 ? 'hidden' : ''}>
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
+<button id="toggleButton">
+  Ver más
+</button>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const experienceItems = Array.from(document.querySelectorAll('#experienceList > li'));
+    const toggleButton = document.getElementById('toggleButton');
+
+    if (!experienceItems.length || !toggleButton) {
+      console.error('No se encontraron los elementos necesarios en el DOM.');
+      return;
+    }
+
+    let showAll = false;
+
+    toggleButton.addEventListener('click', () => {
+      showAll = !showAll;
+      experienceItems.forEach((item, index) => {
+        item.classList.toggle('hidden', index >= 2 && !showAll);
+      });
+      toggleButton.textContent = showAll ? 'Ver menos' : 'Ver más';
+    });
+  });
+</script>

@@ -1,0 +1,119 @@
+---
+import GitHub from "./icons/GitHub.astro"
+import NextJS from "./icons/NextJS.astro"
+import Tailwind from "./icons/Tailwind.astro"
+import Link from "./icons/Link.astro"
+import LinkButton from "./LinkButton.astro"
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextJS,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+}
+const PROJECTS = [
+  {
+    title: "H Music📀",
+    description:
+      " Aplicación de música. Creado desde cero con Next.js y Tailwind CSS en el FrontEnd y para el BackEnd utilisamos Node.js, SQL.",
+    link: "https://henry-music.vercel.app",
+    github: "https://github.com/Alan-Fernandez/henry-music",
+    image: "/projects/HMUSIC-IMAG.png",
+    tags: [TAGS.NEXT, TAGS.TAILWIND],
+  },
+  {
+    title: "Future world",
+    description:
+      " Proyecto en Next.js con rutas dinámicas, múltiples métodos de data fetching, integrando un chatbot con IA. Optimiza el rendimiento del sitio y su SEO, garantizando una experiencia excelente para tus clientes.",
+    link: "https://web-business-pied.vercel.app",
+    github: "https://github.com/Alan-Fernandez/WebBusiness/tree/master",
+    image: "/projects/WebBusiness.webp",
+    tags: [TAGS.NEXT, TAGS.TAILWIND],
+  },
+]
+---
+
+<div id="projectsList" class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }, index) => (
+  <article class={`flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0 ${index >= 2 ? 'hidden' : ''}`}>
+  <div class="w-full md:w-1/2">
+    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+    </div>
+  </div>
+
+  <div class="w-full md:w-1/2 md:max-w-lg">
+    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+      {title}
+    </h3>
+    <div class="flex flex-wrap mt-2">
+      <ul class="flex flex-row mb-2 gap-x-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+      <footer class="flex items-end justify-start mt-4 gap-x-4">
+          {github && (
+            <LinkButton href={github}>
+              <GitHub class="size-6" />
+              Code
+              
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <Link class="size-4" />
+              Preview
+            </LinkButton>
+          )}
+        </footer>
+    </div>
+  </div>
+</article>
+    ))
+  }
+</div>
+<!-- <button id="toggleProjectsButton">
+  Ver más
+</button> -->
+
+
+
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const projectItems = Array.from(document.querySelectorAll('#projectsList > article'));
+    const toggleButton = document.getElementById('toggleProjectsButton');
+
+    if (!projectItems.length || !toggleButton) {
+      console.error('No se encontraron los elementos necesarios en el DOM.');
+      return;
+    }
+
+    let showAll = false;
+
+    toggleButton.addEventListener('click', () => {
+      showAll = !showAll;
+      projectItems.forEach((item, index) => {
+        item.classList.toggle('hidden', index >= 2 && !showAll);
+      });
+      toggleButton.textContent = showAll ? 'Ver menos' : 'Ver más';
+    });
+  });
+</script>

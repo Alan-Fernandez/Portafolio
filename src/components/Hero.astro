@@ -1,0 +1,54 @@
+---
+const personalImageAlt = "Alan D Fernandez"
+import Badge from "@/components/Badge.astro"
+import LinkedInIcon from "@/components/icons/LinkedIn.astro"
+import MailIcon from "@/components/icons/Mail.astro"
+import SocialPill from "@/components/SocialPill.astro"
+import GitHubIcon from "@/components/icons/GitHub.astro"
+---
+
+<div class="max-w-xl">
+  <div class="flex gap-4 mb-4">
+    <img
+      class="rounded-full shadow-lg size-20"
+      src="https://res.cloudinary.com/df5jwzuq9/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1715451665/Foto-persil02_hegbs3.jpg"
+      alt={personalImageAlt}
+    />
+    <a
+      href="https://www.linkedin.com/in/alan-damian-fern%C3%A1ndez2022"
+      target="_blank"
+      rel="noopener"
+      class="flex items-center transition md:justify-center md:hover:scale-105"
+    >
+      <Badge>Disponible para trabajar</Badge>
+    </a>
+  </div>
+  <h1
+    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-4xl dark:text-white"
+  >
+    {`Hola! 👋 Soy ${personalImageAlt}!`}
+  </h1>
+  <p
+    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+  >
+    Fullstack Developer. 
+    <strong>
+    </strong>
+  </p>
+  <code class="text-yellow-300 bg-slate-950 p-1 text-sm rounded-md border border-1  shadow-orange-200 ">console.log("Bienvenidos")</code>
+  
+<nav class="flex flex-wrap gap-4 mt-8">
+  <SocialPill href="fernandeezalan20@gmail.com">
+    <MailIcon class="size-4" />
+    Contáctame
+  </SocialPill>
+  <SocialPill href="https://www.linkedin.com/in/alan-damian-fern%C3%A1ndez2022">
+    <LinkedInIcon class="size-4" />
+    LinkedIn
+  </SocialPill>
+  <SocialPill href="https://github.com/Alan-Fernandez">
+    <GitHubIcon class="size-4" />
+    GitHub
+  </SocialPill>
+</nav>
+</div>
