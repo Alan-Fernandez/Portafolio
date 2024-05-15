@@ -33,7 +33,7 @@ const navItems = [
   >
     <a 
       href="https://github.com/Alan-Fernandez" 
-      class="flex items-center space-x-3 rtl:space-x-reverse mr-10"
+      class="flex items-center space-x-3 rtl:space-x-reverse mr-10 profile-section"
     >
         <img 
           src="https://res.cloudinary.com/df5jwzuq9/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1715451665/Foto-persil02_hegbs3.jpg" 
@@ -89,8 +89,6 @@ const navItems = [
     sections.forEach((section) => {
       observer.observe(section)
     })
-
-    // Cleanup function
     document.onvisibilitychange = () => {
       if (document.visibilityState === "hidden") {
         observer.disconnect()
@@ -113,6 +111,13 @@ const navItems = [
   @keyframes nav-shadown {
     to {
       @apply shadow-lg ring-1 backdrop-blur dark:bg-gray-800/90 bg-white/50 ring-white/10;
+    }
+  }
+
+  
+  @media (max-width: 650px) {
+    .profile-section {
+      display: none;
     }
   }
 </style>
