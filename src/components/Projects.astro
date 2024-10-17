@@ -16,8 +16,34 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
+    NEXTAUTH: {
+    name: "NextAuth",
+    class: "bg-green-500 text-white",
+    icon: () => (
+      // Puedes crear o buscar un icono SVG para NextAuth
+      <svg /* icono NextAuth */></svg>
+    ),
+  },
 }
 const PROJECTS = [
+  {
+    title: "SwaplyAr",
+    description:
+      "SwaplyAr surgió de una necesidad fundamental: facilitar el intercambio de saldo de manera eficiente y garantizar que cada usuario reciba lo acordado, brindándole acompañamiento en cada etapa del proceso. Gracias a su fiabilidad, seguridad y velocidad en cada transacción, SwaplyAr experimentó un crecimiento exponencial, consolidándose como una plataforma confiable y robusta para sus usuarios.",
+    link: "https://swaplyar.vercel.app",
+    // github: "https://github.com/Alan-Fernandez/kong_webhook_v2",
+    image: "https://res.cloudinary.com/df5jwzuq9/image/upload/v1728853376/swaplyar_srke3o.png",
+    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.NEXTAUTH],
+  },
+  {
+    title: "KongWebhook",
+    description:
+      "Plataforma backend para gestão eficiente e escalável de webhooks. Implementada com Next.js e Prisma para manipulação de bancos de dados relacionais como PostgreSQL. Utiliza NextAuth para autenticação segura, Cloudinary para gerenciamento de mídia, e Tailwind CSS para estilização. O projeto segue boas práticas com Eslint, Prettier e migrações automatizadas via Prisma CLI.",
+    link: "https://kong-webhook-v2.vercel.app",
+    github: "https://github.com/Alan-Fernandez/kong_webhook_v2",
+    image: "https://res.cloudinary.com/df5jwzuq9/image/upload/v1728853742/kong-webhook_xr0nu0.png",
+    tags: [TAGS.NEXT, TAGS.TAILWIND],
+  },
   {
     title: "H Music📀",
     description:
